@@ -1,0 +1,25 @@
+# LaTeX build artifacts
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.pdf
+
+# Build artifacts
+artifacts/
+
+# Data (large files)
+data/
+
+# Python
+__pycache__/
+*.pyc
+
+# R
+.Rhistory
+
+# OS
+.DS_Store

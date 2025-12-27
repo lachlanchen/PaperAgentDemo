@@ -1,0 +1,184 @@
+\documentclass[11pt,a4paper]{article}
+
+% ------------------------
+% Encoding & fonts
+% ------------------------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+
+% ------------------------
+% Page layout
+% ------------------------
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+% ------------------------
+% Math packages
+% ------------------------
+\usepackage{amsmath,amssymb,bm,mathtools}
+\usepackage{siunitx}
+
+% ------------------------
+% Graphics & tables
+% ------------------------
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{booktabs}
+\usepackage{multirow}
+
+% ------------------------
+% Algorithms
+% ------------------------
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+% ------------------------
+% Colors & highlighting
+% ------------------------
+\usepackage{xcolor}
+\definecolor{linkblue}{RGB}{0,90,160}
+
+% ------------------------
+% References & citations
+% ------------------------
+\usepackage[numbers,sort&compress]{natbib}
+
+% ------------------------
+% Glossary & acronyms
+% ------------------------
+\usepackage[acronym]{glossaries}
+\makeglossaries
+
+\newacronym{cnn}{CNN}{Convolutional Neural Network}
+\newacronym{snr}{SNR}{Signal-to-Noise Ratio}
+\newacronym{hsi}{HSI}{Hyperspectral Imaging}
+
+\newglossaryentry{eventcamera}{
+  name={event camera},
+  description={A vision sensor that outputs asynchronous brightness change events}
+}
+
+% ------------------------
+% Hyperlinks & clever refs
+% ------------------------
+\usepackage[
+  colorlinks=true,
+  linkcolor=linkblue,
+  citecolor=linkblue,
+  urlcolor=linkblue
+]{hyperref}
+\usepackage{cleveref}
+
+% ------------------------
+% Title information
+% ------------------------
+\title{\textbf{A Sample Paper for Testing the PaperAgent LaTeX Environment}}
+\author{Rongzhou Chen}
+\date{\today}
+
+% ========================
+% Document
+% ========================
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This document serves as a compact yet comprehensive \LaTeX{} testbed for the
+PaperAgent environment. It demonstrates commonly used packages for mathematical
+typesetting, figures, algorithms, references, and glossary management.
+\end{abstract}
+
+\section{Introduction}
+
+Modern computational imaging and machine learning research often relies on
+precise mathematical notation, reproducible algorithms, and structured
+cross-referencing. Tools such as \gls{cnn} and \gls{hsi} are now ubiquitous in
+the field of imaging systems.
+
+An emerging sensor modality is the \gls{eventcamera}, which offers high temporal
+resolution and low latency.
+
+\section{Mathematical Formulation}
+
+Let $\bm{x} \in \mathbb{R}^n$ denote an input signal and $\bm{W}$ a linear operator.
+A common objective function is
+
+\begin{equation}
+\label{eq:loss}
+\mathcal{L}(\bm{W}) =
+\frac{1}{2} \lVert \bm{W}\bm{x} - \bm{y} \rVert_2^2
++ \lambda \lVert \bm{W} \rVert_1 ,
+\end{equation}
+
+where $\lambda > 0$ controls sparsity.
+
+We report signal quality using the \gls{snr}, defined as
+
+\begin{equation}
+\mathrm{SNR} = 10 \log_{10} \left(
+\frac{\lVert \bm{s} \rVert_2^2}{\lVert \bm{n} \rVert_2^2}
+\right) \, \si{\decibel}.
+\end{equation}
+
+\section{Algorithm}
+
+\begin{algorithm}[h]
+\caption{Gradient Descent Optimization}
+\label{alg:gd}
+\begin{algorithmic}[1]
+\Require Initial parameter $\bm{W}_0$, step size $\eta$
+\For{$k = 0$ to $K-1$}
+  \State $\bm{g}_k \gets \nabla \mathcal{L}(\bm{W}_k)$
+  \State $\bm{W}_{k+1} \gets \bm{W}_k - \eta \bm{g}_k$
+\EndFor
+\State \Return $\bm{W}_K$
+\end{algorithmic}
+\end{algorithm}
+
+\section{Experimental Results}
+
+\begin{table}[h]
+\centering
+\caption{Quantitative comparison of reconstruction quality}
+\label{tab:results}
+\begin{tabular}{lcc}
+\toprule
+Method & SNR (dB) $\uparrow$ & Runtime (ms) $\downarrow$ \\
+\midrule
+Baseline & 28.4 & 12.1 \\
+Proposed & \textbf{32.7} & 14.3 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Discussion}
+
+As shown in \cref{eq:loss,alg:gd,tab:results}, the proposed formulation improves
+reconstruction fidelity at a modest computational cost.
+
+\section{Conclusion}
+
+This sample paper validates the PaperAgent \LaTeX{} toolchain and provides a
+ready-to-extend starting point for full research manuscripts.
+
+\printglossaries
+
+\bibliographystyle{plainnat}
+\begin{thebibliography}{9}
+
+\bibitem{goodfellow2016deep}
+I.~Goodfellow, Y.~Bengio, and A.~Courville.
+\newblock \emph{Deep Learning}.
+\newblock MIT Press, 2016.
+
+\bibitem{gallego2022event}
+G.~Gallego et~al.
+\newblock Event-based vision: A survey.
+\newblock \emph{IEEE TPAMI}, 44(1):154--180, 2022.
+
+\end{thebibliography}
+
+\end{document}
