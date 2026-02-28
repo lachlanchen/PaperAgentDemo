@@ -1,6 +1,8 @@
 [English](../README.md) · [العربية](README.ar.md) · [Español](README.es.md) · [Français](README.fr.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Tiếng Việt](README.vi.md) · [中文 (简体)](README.zh-Hans.md) · [中文（繁體）](README.zh-Hant.md) · [Deutsch](README.de.md) · [Русский](README.ru.md)
 
 
+[![LazyingArt banner](https://github.com/lachlanchen/lachlanchen/raw/main/figs/banner.png)](https://github.com/lachlanchen/lachlanchen/blob/main/figs/banner.png)
+
 # PaperAgentDemo
 
 ![Status](https://img.shields.io/badge/status-active-1f6feb)
@@ -9,37 +11,39 @@
 ![Glossary](https://img.shields.io/badge/glossaries-enabled-6f42c1)
 ![License](https://img.shields.io/badge/license-Not%20Specified-lightgrey)
 
-一個精簡且與儲存庫現況一致的 LaTeX 論文骨架，核心為 `latex/main.tex`，用於驗證與擴充論文工作流程，涵蓋公式、演算法、表格、詞彙表/縮寫、參考文獻與 PDF 建置工具。
+一個精簡、與倉庫內容一致的 LaTeX 論文骨架，以 `latex/main.tex` 為核心，旨在以公式、演算法、表格、詞彙表/縮寫、參考文獻與 PDF 建置工具來驗證並延伸論文工作流程。
+
+## 🧩 概覽
 
 | 項目 | 值 |
 | --- | --- |
 | 主要論文檔案 | `latex/main.tex` |
 | 目前建置方式 | 本機 LaTeX（`latexmk` / `pdflatex`） |
-| i18n 資料夾狀態 | `i18n/` 已存在（語言檔案可逐步新增） |
-| 授權檔案狀態 | 目前不存在 |
+| i18n 資料夾狀態 | `i18n/` 已存在，語言檔案可持續補上 |
+| 授權檔案狀態 | 目前尚未提供 |
 
-## 📌 概覽
+## 📌 概述
 
-此儲存庫目前提供：
+目前本倉庫提供：
 
-- 單一主要論文原始檔：`latex/main.tex`。
-- 具代表性的論文結構，包含摘要、方法、演算法、結果、討論與結論。
-- 常見研究寫作任務所需的 LaTeX 套件覆蓋（數學、引用、詞彙表、交叉參照）。
-- 位於 `.auto-readme-work/` 的多語 README 產線中繼資料。
+- 一個單一的主要論文來源檔：`latex/main.tex`。
+- 一個具代表性的論文架構，包含摘要、方法、演算法、結果、討論與結論。
+- 支援常見研究寫作任務的 LaTeX 套件組合（數學、引文、詞彙表、交叉參照）。
+- `.auto-readme-work/` 目錄下的多語 README 生成流程中繼資料。
 
-重要儲存庫說明：
+重要的倉庫說明：
 
-- `AGENTS.md` 描述了預期目錄（`figures/`、`data/`、`artifacts/`、`code/`），但其中部分目錄目前尚未出現在現有樹狀結構中。本 README 保留該設計意圖，並明確標示缺漏項。
+- `AGENTS.md` 描述了預期目錄（`figures/`、`data/`、`artifacts/`、`code/`），但目前部分目錄尚未在實際目錄樹中出現。本 README 保留這些設計意圖並明確標示缺漏。
 
-## ✨ 功能特色
+## ✨ 功能
 
-- 透過 `amsmath`、`amssymb`、`bm`、`mathtools` 與 `siunitx` 進行數學排版。
-- 透過 `graphicx`、`subcaption`、`booktabs` 與 `multirow` 支援圖與表。
+- 透過 `amsmath`、`amssymb`、`bm`、`mathtools` 與 `siunitx` 提供數學排版能力。
+- 透過 `graphicx`、`subcaption`、`booktabs` 與 `multirow` 支援圖表。
 - 透過 `algorithm` 與 `algpseudocode` 提供演算法環境。
-- 透過 `natbib` 支援文獻引用。
-- 透過 `glossaries` 支援詞彙表與縮寫（已啟用 `\makeglossaries`）。
-- 透過 `hyperref` 與 `cleveref` 進行交叉參照。
-- 已內建示例內容：含 `\ell_1` 正則化的目標函數方程式、以 dB 表示的 SNR 方程式、梯度下降偽程式碼、定量比較表，以及行內 bibliography 條目。
+- 透過 `natbib` 提供文獻引用支援。
+- 透過 `glossaries` 提供詞彙表與縮寫支援（已啟用 `\makeglossaries`）。
+- 透過 `hyperref` 與 `cleveref` 提供交叉參照。
+- 已內建示例內容：含 `\ell_1` 正則化的目標函式方程式、以 dB 表示的 SNR 方程式、梯度下降偽代碼、量化比較表與行內參考文獻條目。
 
 ## 🧭 專案結構
 
@@ -62,31 +66,31 @@ PaperAgentDemo/
     └── main.ist                  # glossary style artifact
 ```
 
-## ✅ 先決條件
+## ✅ 前置條件
 
-請安裝包含 `latex/main.tex` 所用套件的 TeX 環境。
+請安裝包含 `latex/main.tex` 所使用套件的 TeX 環境。
 
-最低可行需求：
+最低實用需求：
 
 - `latexmk`
 - `pdflatex`
-- `bibtex`（標準流程中的文獻處理）
-- `glossaries` 工作流程所需的詞彙表工具（通常為 TeX 發行版中的 `makeglossaries`）
+- `bibtex`（用於標準流程中的參考文獻處理）
+- `glossaries` 流程所需的詞彙表工具（通常為 TeX 發行版提供的 `makeglossaries`）
 
 假設：
 
-- 本儲存庫未釘選套件名稱與版本；請使用近期版本的 TeX Live 或 MiKTeX 發行版。
+- 本倉庫未鎖定特定套件名稱與版本；建議使用較新版本的 TeX Live 或 MiKTeX。
 
 ## 📥 安裝
 
-複製並進入儲存庫：
+複製並進入此倉庫：
 
 ```bash
 git clone <your-fork-or-repo-url>
 cd PaperAgentDemo
 ```
 
-目前儲存庫內尚未定義額外的套件管理器安裝步驟。
+目前倉庫中尚未定義額外的套件管理器安裝步驟。
 
 ## 🚀 使用方式
 
@@ -102,13 +106,13 @@ cd PaperAgentDemo
 latexmk -pdf -interaction=nonstopmode -halt-on-error latex/main.tex
 ```
 
-單次編譯（快速迭代）：
+快速迭代時單次編譯：
 
 ```bash
 pdflatex latex/main.tex
 ```
 
-清理 LaTeX 輔助檔但保留 PDF：
+清理 LaTeX 輔助檔並保留 PDF：
 
 ```bash
 latexmk -c latex/main.tex
@@ -118,24 +122,24 @@ latexmk -c latex/main.tex
 
 1. 在 `latex/main.tex` 編輯論文內容。
 2. 建置 PDF。
-3. 目視檢查輸出 PDF 的版面與交叉參照。
+3. 在輸出的 PDF 中進行版面與參考文獻視覺檢查。
 
 ## ⚙️ 設定
 
-目前文件層級設定位於 `latex/main.tex`：
+目前文件層級的設定位於 `latex/main.tex`：
 
-- 文件類別：`article`，選項為 `11pt,a4paper`。
+- 文件類型：`article`，附帶 `11pt,a4paper`。
 - 版面配置：`geometry`，`margin=1in`。
 - 行距：`\onehalfspacing`。
-- 透過自訂 `linkblue` 與 `hyperref` 選項設定連結顏色。
+- 以自訂 `linkblue` 與 `hyperref` 選項設定連結顏色。
 - 已預先定義 `CNN`、`SNR`、`HSI` 與 `event camera` 的縮寫與詞彙表條目。
 
-儲存庫層級忽略行為（`.gitignore`）：
+倉庫層級的忽略設定（`.gitignore`）：
 
-- 會忽略多數 LaTeX 建置產物（`*.aux`、`*.log`、`*.pdf` 等）。
+- 會忽略大多數 LaTeX 建置產物（`*.aux`、`*.log`、`*.pdf` 等）。
 - 預設忽略 `artifacts/` 與 `data/` 目錄。
 
-## 🧪 範例
+## 🧪 使用範例
 
 端到端建置論文：
 
@@ -143,87 +147,94 @@ latexmk -c latex/main.tex
 latexmk -pdf -interaction=nonstopmode -halt-on-error latex/main.tex
 ```
 
-先清理再重建：
+清理後重建：
 
 ```bash
 latexmk -c latex/main.tex
 latexmk -pdf -interaction=nonstopmode -halt-on-error latex/main.tex
 ```
 
-編輯單一章節時的快速編譯：
+編輯單一段落時快速編譯：
 
 ```bash
 pdflatex latex/main.tex
 ```
 
-## 🛠 開發說明
+## 🛠 開發註記
 
-來自 `AGENTS.md` 的建議：
+來自 `AGENTS.md` 的指引：
 
-- 將 LaTeX 來源內容置於清楚的 `\section{}` 標題下。
-- 一致使用標籤前綴：方程式用 `eq:`、圖用 `fig:`、表格用 `tab:`、演算法用 `alg:`。
-- 優先以 `\cref{}` 進行參照。
-- 使用小寫連字號命名素材（例如：`figures/snr-comparison.pdf`）。
-- 在有助可讀性的情況下，巢狀 LaTeX 區塊以兩個空白縮排。
+- 將 LaTeX 來源放在清楚的 `\section{}` 區段下。
+- 一律使用一致的標籤前綴：`eq:` 代表方程式、`fig:` 代表圖、`tab:` 代表表、`alg:` 代表演算法。
+- 優先使用 `\cref{}` 進行參照。
+- 使用小寫加連字號的檔名（例如：`figures/snr-comparison.pdf`）。
+- 在巢狀 LaTeX 區塊有助閱讀時，使用兩個空格縮排。
 
 驗證方式：
 
 - 目前沒有自動化測試。
-- 主要驗證方式是 LaTeX 成功建置，加上人工檢查產生的 PDF。
+- 主要驗證是成功建置 LaTeX，再加上輸出 PDF 的目視檢查。
 
 ## 🧰 疑難排解
 
-常見問題與檢查項目：
+常見問題與檢查：
 
-- 建置因缺少套件失敗：從你的 TeX 發行版安裝缺少的 LaTeX 套件。
-- 詞彙表條目未顯示：確認已安裝詞彙表工具，並重新執行 `latexmk` 以觸發詞彙表步驟。
-- 引用或參照警告持續出現：改用 `latexmk` 重建（可自動處理多次編譯）。
-- 輸出 PDF 未被 git 追蹤：這是預期行為，因為 `.gitignore` 目前忽略 `*.pdf`。
+- 建置失敗且回報缺少套件：請先從 TeX 發行版安裝對應套件。
+- 詞彙表條目沒有顯示：確認詞彙表工具已安裝並重新執行 `latexmk`，讓詞彙表步驟完成。
+- 引用或參照警告持續存在：使用 `latexmk` 重建（它會自動進行多輪編譯）。
+- 輸出 PDF 未納入 Git 追蹤：這是預期行為，因為 `.gitignore` 目前忽略 `*.pdf`。
 
 ## 🗺 路線圖
 
-規劃中或可能的下一步（根據儲存庫檔案與指引推斷）：
+根據目前檔案與指引推估的後續規劃：
 
-1. 隨專案擴展新增 `figures/`、`data/`、`artifacts/` 與 `code/` 目錄。
-2. 在 `i18n/` 下新增與語言導覽連結一致的各語系 README 檔。
-3. 在 `code/` 下加入可重現圖表/表格產生流程的輔助腳本（可選）。
-4. 若專案超出本機樣板規模，導入 CI 進行建置驗證。
+1. 新增 `figures/`、`data/`、`artifacts/` 與 `code/` 目錄，隨專案推進逐步補足。
+2. 在 `i18n/` 目錄下新增與語言導覽連結一致的語言 README。
+3. 在 `code/` 下加入可重現圖表與表格的輔助腳本（可選）。
+4. 若專案規模超出本機範本，導入 CI 以進行建置驗證。
 
 ## 🤝 貢獻
 
-目前尚未定義正式貢獻流程，可先遵循以下基準：
+目前未定義正式的貢獻流程，請先使用以下基準：
 
 1. 建立分支。
-2. 進行聚焦變更。
-3. 執行乾淨的 LaTeX 建置：
+2. 進行聚焦修改。
+3. 執行乾淨建置：
 
 ```bash
 latexmk -pdf -interaction=nonstopmode -halt-on-error latex/main.tex
 ```
 
-4. 在 PR 中提供清楚的論文或工具變更摘要。
+4. 在 PR 中清楚摘要論文或工具變更。
 
-儲存庫指南建議的 commit 風格：
+建議的提交訊息風格：
 
-- 使用清楚、祈使句的 commit 主旨。
+- 使用清楚、祈使式的主旨。
 - 範例：`Add glossary entries for sensor terms`
 
 ## 📄 授權
 
-儲存庫根目錄目前沒有授權檔案。
+目前倉庫根目錄未提供授權檔。
 
 假設：
 
-- 在加入 `LICENSE` 檔之前，所有權利與再利用條款目前均未明確定義。
+- 所有權利與再利用條款目前仍未明確定義，將在加入 `LICENSE` 檔後補齊。
 
 ## 📚 參考與致謝
 
-`latex/main.tex` 的示例論文目前包含以下行內 bibliography 條目：
+`latex/main.tex` 的範例論文目前已內建以下行內參考文獻條目：
 
-- Goodfellow, Bengio, and Courville, *Deep Learning* (MIT Press, 2016).
-- Gallego et al., *Event-based vision: A survey* (IEEE TPAMI, 2022).
+- Goodfellow、Bengio 與 Courville, *Deep Learning* (MIT Press, 2016).
+- Gallego 等, *Event-based vision: A survey* (IEEE TPAMI, 2022).
 
 致謝狀態：
 
-- 目前儲存庫檔案中沒有獨立的致謝、贊助或捐助/支援章節。
-- 若贊助/支援資訊存在於儲存庫外部，請在不移除技術內容的前提下加入此處。
+- 目前在論文中尚未有專門的致謝章節。
+- 贊助與支持資訊已集中於上方 **❤️ Support** 區塊。
+
+
+## ❤️ Support
+
+| Donate | PayPal | Stripe |
+| --- | --- | --- |
+| [![Donate](https://camo.githubusercontent.com/24a4914f0b42c6f435f9e101621f1e52535b02c225764b2f6cc99416926004b7/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f446f6e6174652d4c617a79696e674172742d3045413545393f7374796c653d666f722d7468652d6261646765266c6f676f3d6b6f2d6669266c6f676f436f6c6f723d7768697465)](https://chat.lazying.art/donate) | [![PayPal](https://camo.githubusercontent.com/d0f57e8b016517a4b06961b24d0ca87d62fdba16e18bbdb6aba28e978dc0ea21/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f50617950616c2d526f6e677a686f754368656e2d3030343537433f7374796c653d666f722d7468652d6261646765266c6f676f3d70617970616c266c6f676f436f6c6f723d7768697465)](https://paypal.me/RongzhouChen) | [![Stripe](https://camo.githubusercontent.com/1152dfe04b6943afe3a8d2953676749603fb9f95e24088c92c97a01a897b4942/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f5374726970652d446f6e6174652d3633354246463f7374796c653d666f722d7468652d6261646765266c6f676f3d737472697065266c6f676f436f6c6f723d7768697465)](https://buy.stripe.com/aFadR8gIaflgfQV6T4fw400) |

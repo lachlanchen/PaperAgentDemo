@@ -1,6 +1,8 @@
 [English](../README.md) · [العربية](README.ar.md) · [Español](README.es.md) · [Français](README.fr.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Tiếng Việt](README.vi.md) · [中文 (简体)](README.zh-Hans.md) · [中文（繁體）](README.zh-Hant.md) · [Deutsch](README.de.md) · [Русский](README.ru.md)
 
 
+[![LazyingArt banner](https://github.com/lachlanchen/lachlanchen/raw/main/figs/banner.png)](https://github.com/lachlanchen/lachlanchen/blob/main/figs/banner.png)
+
 # PaperAgentDemo
 
 ![Status](https://img.shields.io/badge/status-active-1f6feb)
@@ -9,37 +11,39 @@
 ![Glossary](https://img.shields.io/badge/glossaries-enabled-6f42c1)
 ![License](https://img.shields.io/badge/license-Not%20Specified-lightgrey)
 
-Un squelette d’article LaTeX compact et fidèle au dépôt, centré sur `latex/main.tex`, conçu pour valider et étendre un flux de travail de manuscrit avec équations, algorithmes, tableaux, glossaire/acronymes, références et outillage de compilation PDF.
+Un socle d’article LaTeX compact et fidèle au dépôt, centré sur `latex/main.tex`, conçu pour valider et étendre un flux de travail de manuscrit avec équations, algorithmes, tableaux, glossaire/acronymes, références et outils de génération PDF.
+
+## 🧩 En un coup d’œil
 
 | Élément | Valeur |
 | --- | --- |
 | Fichier principal du manuscrit | `latex/main.tex` |
 | Style de build actuel | LaTeX local (`latexmk` / `pdflatex`) |
-| Statut du dossier i18n | `i18n/` existe (des fichiers de langue peuvent être ajoutés au fil du temps) |
+| Statut du dossier i18n | `i18n/` existe (des fichiers de langue peuvent être ajoutés avec le temps) |
 | Statut du fichier de licence | Non présent actuellement |
 
-## 📌 Vue d’ensemble
+## 📌 Aperçu
 
 Ce dépôt fournit actuellement :
 
-- Un unique fichier source principal de manuscrit : `latex/main.tex`.
+- Un fichier source principal unique : `latex/main.tex`.
 - Une structure d’article représentative avec résumé, méthodes, algorithme, résultats, discussion et conclusion.
-- Une couverture de packages LaTeX pour les tâches courantes de rédaction scientifique (maths, citations, glossaire, références croisées).
-- Des métadonnées de pipeline sous `.auto-readme-work/` pour la génération multilingue du README.
+- Une couverture de paquets LaTeX pour les tâches courantes de rédaction scientifique (mathématiques, citations, glossaire, références croisées).
+- Des métadonnées de pipeline dans `.auto-readme-work/` pour la génération multilingue du README.
 
-Note importante sur le dépôt :
+Remarque importante du dépôt :
 
-- `AGENTS.md` décrit les répertoires visés (`figures/`, `data/`, `artifacts/`, `code/`), mais certains ne sont pas encore présents dans l’arborescence actuelle. Ce README conserve cette intention et signale explicitement les éléments manquants.
+- `AGENTS.md` décrit les répertoires prévus (`figures/`, `data/`, `artifacts/`, `code/`), mais certains ne sont pas encore présents dans l’arborescence actuelle. Ce README conserve cette intention et signale explicitement les éléments manquants.
 
 ## ✨ Fonctionnalités
 
-- Composition mathématique via `amsmath`, `amssymb`, `bm`, `mathtools` et `siunitx`.
+- Typographie mathématique via `amsmath`, `amssymb`, `bm`, `mathtools` et `siunitx`.
 - Prise en charge des figures et tableaux via `graphicx`, `subcaption`, `booktabs` et `multirow`.
 - Environnement d’algorithme via `algorithm` et `algpseudocode`.
-- Prise en charge des citations via `natbib`.
-- Prise en charge du glossaire et des acronymes via `glossaries` (`\makeglossaries` activé).
+- Support des citations via `natbib`.
+- Support du glossaire et des acronymes via `glossaries` (`\makeglossaries` activé).
 - Références croisées via `hyperref` et `cleveref`.
-- Contenu d’exemple déjà inclus : équation de fonction objectif avec régularisation `\ell_1`, équation SNR en dB, pseudocode de descente de gradient, tableau de comparaison quantitative et entrées bibliographiques inline.
+- Contenu d’exemple déjà inclus : équation de fonction objectif avec régularisation `\ell_1`, équation SNR en dB, pseudo-code de descente de gradient, tableau de comparaison quantitatif et entrées bibliographiques en ligne.
 
 ## 🧭 Structure du projet
 
@@ -54,19 +58,19 @@ PaperAgentDemo/
 ├── .gitignore
 ├── AGENTS.md
 ├── README.md
-├── i18n/                         # actuellement présent ; des README de langue peuvent être ajoutés au fil du temps
+├── i18n/                         # actuellement présent ; les fichiers README linguistiques pourront être ajoutés progressivement
 └── latex/
     ├── main.tex                  # source principale du manuscrit
-    ├── main.acn                  # artefact généré du glossaire/acronymes
-    ├── main.glo                  # artefact généré du glossaire
-    └── main.ist                  # artefact de style du glossaire
+    ├── main.acn                  # artefact de glossaire/acronyme généré
+    ├── main.glo                  # artefact de glossaire généré
+    └── main.ist                  # style de glossaire
 ```
 
 ## ✅ Prérequis
 
-Installez un environnement TeX qui inclut les packages utilisés par `latex/main.tex`.
+Installez un environnement TeX qui inclut les paquets utilisés par `latex/main.tex`.
 
-Exigences pratiques minimales :
+Exigences minimales pratiques :
 
 - `latexmk`
 - `pdflatex`
@@ -75,7 +79,7 @@ Exigences pratiques minimales :
 
 Hypothèse :
 
-- Les noms et versions des packages ne sont pas verrouillés dans ce dépôt ; utilisez une distribution TeX Live ou MiKTeX récente.
+- Les noms et versions des paquets ne sont pas figés dans ce dépôt ; utilisez une distribution TeX Live ou MiKTeX récente.
 
 ## 📥 Installation
 
@@ -86,7 +90,7 @@ git clone <your-fork-or-repo-url>
 cd PaperAgentDemo
 ```
 
-Aucune étape d’installation supplémentaire via gestionnaire de paquets n’est actuellement définie dans le dépôt.
+Aucune étape d’installation de gestionnaire de paquets supplémentaire n’est actuellement définie dans le dépôt.
 
 ## 🚀 Utilisation
 
@@ -114,11 +118,11 @@ Nettoyer les fichiers auxiliaires LaTeX tout en conservant le PDF :
 latexmk -c latex/main.tex
 ```
 
-Workflow attendu :
+Flux de travail attendu :
 
 1. Modifiez le contenu du manuscrit dans `latex/main.tex`.
-2. Compilez le PDF.
-3. Inspectez visuellement la mise en page et les références dans le PDF de sortie.
+2. Générez le PDF.
+3. Vérifiez visuellement la mise en page et les références dans le PDF de sortie.
 
 ## ⚙️ Configuration
 
@@ -130,27 +134,27 @@ La configuration actuelle au niveau du document se trouve dans `latex/main.tex` 
 - Configuration des couleurs de liens via `linkblue` personnalisé et options `hyperref`.
 - Acronymes et entrées de glossaire prédéfinis pour `CNN`, `SNR`, `HSI` et `event camera`.
 
-Comportement d’ignore au niveau dépôt (`.gitignore`) :
+Comportement d’ignorance au niveau du dépôt (`.gitignore`) :
 
-- Ignore la plupart des artefacts de build LaTeX (`*.aux`, `*.log`, `*.pdf`, etc.).
-- Ignore les répertoires `artifacts/` et `data/` par défaut.
+- Ignore la plupart des artefacts de compilation LaTeX (`*.aux`, `*.log`, `*.pdf`, etc.).
+- Ignore par défaut les répertoires `artifacts/` et `data/`.
 
 ## 🧪 Exemples
 
-Compiler le manuscrit de bout en bout :
+Compilez le manuscrit de bout en bout :
 
 ```bash
 latexmk -pdf -interaction=nonstopmode -halt-on-error latex/main.tex
 ```
 
-Nettoyer puis recompiler :
+Nettoyer puis reconstruire :
 
 ```bash
 latexmk -c latex/main.tex
 latexmk -pdf -interaction=nonstopmode -halt-on-error latex/main.tex
 ```
 
-Compilation rapide pendant l’édition d’une section :
+Compilation rapide pendant la modification d’une section :
 
 ```bash
 pdflatex latex/main.tex
@@ -160,70 +164,76 @@ pdflatex latex/main.tex
 
 Recommandations issues de `AGENTS.md` :
 
-- Garder la source LaTeX sous des titres `\section{}` clairs.
-- Utiliser les préfixes d’étiquettes de manière cohérente : `eq:` pour les équations, `fig:` pour les figures, `tab:` pour les tableaux et `alg:` pour les algorithmes.
+- Conserver la source LaTeX sous des sections `\section{}` claires.
+- Utiliser des préfixes d’étiquettes cohérents : `eq:` pour les équations, `fig:` pour les figures, `tab:` pour les tableaux et `alg:` pour les algorithmes.
 - Préférer les références via `\cref{}`.
-- Utiliser des noms de ressources en minuscules avec tirets (exemple : `figures/snr-comparison.pdf`).
-- Indenter les blocs LaTeX imbriqués avec deux espaces lorsque cela aide.
+- Utiliser des noms de fichiers minuscules avec des tirets (ex. : `figures/snr-comparison.pdf`).
+- Indenter les blocs LaTeX imbriqués avec deux espaces lorsque utile.
 
 Approche de validation :
 
-- Il n’existe pas de suite de tests automatisés.
-- La validation principale est une compilation LaTeX réussie suivie d’une inspection visuelle du PDF généré.
+- Il n’existe aucune suite de tests automatisée.
+- La validation principale est une compilation LaTeX réussie, suivie d’un contrôle visuel du PDF généré.
 
 ## 🧰 Dépannage
 
 Problèmes fréquents et vérifications :
 
-- La compilation échoue à cause d’un package manquant : installez les packages LaTeX manquants depuis votre distribution TeX.
-- Les entrées de glossaire n’apparaissent pas : vérifiez que les outils de glossaire sont installés puis relancez `latexmk` pour exécuter les étapes de glossaire.
+- La compilation échoue à cause d’un paquet manquant : installez le paquet manquant depuis votre distribution TeX.
+- Les entrées de glossaire n’apparaissent pas : assurez-vous que les outils de glossaire sont installés et relancez `latexmk` pour exécuter les étapes de glossaire.
 - Les avertissements de citation ou de référence persistent : recompilez avec `latexmk` (les passes multiples sont gérées automatiquement).
-- Le PDF de sortie n’est pas suivi par git : c’est attendu car `*.pdf` est actuellement ignoré dans `.gitignore`.
+- Le PDF de sortie n’est pas suivi par git : c’est prévu car `*.pdf` est actuellement ignoré dans `.gitignore`.
 
 ## 🗺 Feuille de route
 
-Étapes prévues ou probables (inférées à partir des fichiers du dépôt et des consignes) :
+Étapes prévues ou probables suivantes (inférées depuis les fichiers du dépôt et les consignes) :
 
-1. Ajouter les répertoires `figures/`, `data/`, `artifacts/` et `code/` à mesure que le travail s’étend.
-2. Ajouter des README spécifiques à chaque langue sous `i18n/` en correspondant aux liens de navigation linguistique.
-3. Ajouter des scripts d’aide optionnels pour une génération reproductible des figures/tableaux sous `code/`.
-4. Introduire une CI pour la vérification de build si le projet dépasse le stade du template local.
+1. Ajouter `figures/`, `data/`, `artifacts/` et `code/` au fur et à mesure que le projet progresse.
+2. Ajouter des README spécifiques à chaque langue dans `i18n/` correspondant aux liens de navigation linguistique.
+3. Ajouter des scripts d’assistance optionnels pour la génération reproductible de figures/tableaux dans `code/`.
+4. Introduire une CI pour la vérification de build si le projet dépasse un simple modèle local.
 
 ## 🤝 Contribuer
 
-Aucun workflow de contribution formel n’est défini actuellement, utilisez donc cette base :
+Aucun flux de contribution formel n’est défini pour l’instant ; utilisez donc la base suivante :
 
 1. Créez une branche.
-2. Faites des modifications ciblées.
+2. Réalisez des changements ciblés.
 3. Exécutez une compilation LaTeX propre :
 
 ```bash
 latexmk -pdf -interaction=nonstopmode -halt-on-error latex/main.tex
 ```
 
-4. Incluez dans votre PR un résumé clair des changements de manuscrit ou d’outillage.
+4. Incluez dans votre PR un résumé clair des changements du manuscrit ou de l’outillage.
 
-Style de commit suggéré d’après les consignes du dépôt :
+Style de commit suggéré par les consignes du dépôt :
 
-- Utiliser des sujets de commit clairs et à l’impératif.
+- Utilisez des objets de commit clairs et à l’impératif.
 - Exemple : `Add glossary entries for sensor terms`
 
-## 📄 Licence
+## ❤️ Support
+
+| Donate | PayPal | Stripe |
+| --- | --- | --- |
+| [![Donate](https://camo.githubusercontent.com/24a4914f0b42c6f435f9e101621f1e52535b02c225764b2f6cc99416926004b7/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f446f6e6174652d4c617a79696e674172742d3045413545393f7374796c653d666f722d7468652d6261646765266c6f676f3d6b6f2d6669266c6f676f436f6c6f723d7768697465)](https://chat.lazying.art/donate) | [![PayPal](https://camo.githubusercontent.com/d0f57e8b016517a4b06961b24d0ca87d62fdba16e18bbdb6aba28e978dc0ea21/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f50617950616c2d526f6e677a686f754368656e2d3030343537433f7374796c653d666f722d7468652d6261646765266c6f676f3d70617970616c266c6f676f436f6c6f723d7768697465)](https://paypal.me/RongzhouChen) | [![Stripe](https://camo.githubusercontent.com/1152dfe04b6943afe3a8d2953676749603fb9f95e24088c92c97a01a897b4942/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f5374726970652d446f6e6174652d3633354246463f7374796c653d666f722d7468652d6261646765266c6f676f3d737472697065266c6f676f436f6c6f723d7768697465)](https://buy.stripe.com/aFadR8gIaflgfQV6T4fw400) |
+
+## 📄 License
 
 Aucun fichier de licence n’est actuellement présent à la racine du dépôt.
 
 Hypothèse :
 
-- Tous les droits et conditions de réutilisation sont actuellement non spécifiés jusqu’à l’ajout d’un fichier `LICENSE`.
+- Tous les droits et conditions de réutilisation restent non spécifiés tant qu’un fichier `LICENSE` n’est pas ajouté.
 
 ## 📚 Références et remerciements
 
-Le manuscrit d’exemple dans `latex/main.tex` inclut actuellement des entrées bibliographiques inline pour :
+Le manuscrit d’exemple dans `latex/main.tex` inclut actuellement des entrées bibliographiques en ligne pour :
 
 - Goodfellow, Bengio et Courville, *Deep Learning* (MIT Press, 2016).
 - Gallego et al., *Event-based vision: A survey* (IEEE TPAMI, 2022).
 
 Statut des remerciements :
 
-- Aucune section dédiée aux remerciements, sponsors, dons ou support n’est actuellement présente dans les fichiers du dépôt.
-- Si des informations de sponsor/support existent en dehors du dépôt, ajoutez-les ici sans supprimer le contenu technique.
+- Aucune section dédiée aux remerciements n’est actuellement présente dans le manuscrit.
+- Les liens de parrainage/soutien sont consolidés dans la section **❤️ Support** ci-dessus.

@@ -1,6 +1,8 @@
 [English](../README.md) · [العربية](README.ar.md) · [Español](README.es.md) · [Français](README.fr.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Tiếng Việt](README.vi.md) · [中文 (简体)](README.zh-Hans.md) · [中文（繁體）](README.zh-Hant.md) · [Deutsch](README.de.md) · [Русский](README.ru.md)
 
 
+[![LazyingArt banner](https://github.com/lachlanchen/lachlanchen/raw/main/figs/banner.png)](https://github.com/lachlanchen/lachlanchen/blob/main/figs/banner.png)
+
 # PaperAgentDemo
 
 ![Status](https://img.shields.io/badge/status-active-1f6feb)
@@ -9,37 +11,39 @@
 ![Glossary](https://img.shields.io/badge/glossaries-enabled-6f42c1)
 ![License](https://img.shields.io/badge/license-Not%20Specified-lightgrey)
 
-`latex/main.tex` を中心に構成された、リポジトリ実態に即したコンパクトな LaTeX 論文スキャフォールドです。数式・アルゴリズム・表・用語集/略語・参考文献・PDF ビルドツールを含む原稿ワークフローの検証と拡張を目的としています。
+`latex/main.tex` を中核に据えた、リポジトリ実態に沿ったコンパクトな LaTeX 論文スケルトンです。数式、アルゴリズム、表、用語集／略語、参考文献、PDF ビルド支援を備え、原稿ワークフローの検証と拡張を想定しています。
+
+## 🧩 At a Glance
 
 | 項目 | 値 |
 | --- | --- |
 | 主原稿ファイル | `latex/main.tex` |
 | 現在のビルド方式 | ローカル LaTeX (`latexmk` / `pdflatex`) |
-| i18n フォルダの状態 | `i18n/` は存在（各言語ファイルは今後追加される場合があります） |
+| i18n フォルダの状態 | `i18n/` が存在（言語ファイルは順次追加予定） |
 | ライセンスファイルの状態 | 現時点では未配置 |
 
 ## 📌 概要
 
-このリポジトリは現在、以下を提供しています。
+このリポジトリは現在以下を提供します。
 
-- 単一の主原稿ソースファイル: `latex/main.tex`。
-- アブストラクト、手法、アルゴリズム、結果、考察、結論を含む代表的な論文構成。
-- 研究執筆で一般的なタスク（数式、引用、用語集、相互参照）をカバーする LaTeX パッケージ構成。
-- 多言語 README 生成のためのパイプラインメタデータ（`.auto-readme-work/`）。
+- 単一の主原稿ソース `latex/main.tex`。
+- 摘要、手法、アルゴリズム、結果、議論、結論を含む代表的な論文構成。
+- 共通的な研究執筆タスク（数式、引用、用語集、相互参照）に対応する LaTeX パッケージ群。
+- 多言語 README 生成用のパイプラインメタデータ (`.auto-readme-work/`)。
 
 重要なリポジトリ注記:
 
-- `AGENTS.md` には想定ディレクトリ（`figures/`, `data/`, `artifacts/`, `code/`）が記載されていますが、現在のツリーには未作成のものがあります。本 README はその意図を維持し、未存在項目を明示しています。
+- `AGENTS.md` には想定ディレクトリ（`figures/`, `data/`, `artifacts/`, `code/`）が記載されていますが、現時点のツリーには未作成のものがあります。本 README ではその意図を維持し、未整備項目を明示します。
 
 ## ✨ 特徴
 
 - `amsmath`, `amssymb`, `bm`, `mathtools`, `siunitx` による数式組版。
 - `graphicx`, `subcaption`, `booktabs`, `multirow` による図表サポート。
 - `algorithm` と `algpseudocode` によるアルゴリズム環境。
-- `natbib` による引用サポート。
-- `glossaries` による用語集・略語サポート（`\makeglossaries` 有効）。
+- `natbib` による引用支援。
+- `glossaries` (`\makeglossaries` 有効) による用語集／略語サポート。
 - `hyperref` と `cleveref` による相互参照。
-- 既存のサンプル内容: `\ell_1` 正則化付き目的関数、dB 表記の SNR 方程式、勾配降下法の疑似コード、定量比較表、インライン参考文献エントリ。
+- 既存サンプル内容: `\ell_1` 正則化付き目的関数、dB 単位の SNR 式、勾配降下法の疑似コード、定量比較表、インライン参考文献エントリ。
 
 ## 🧭 プロジェクト構成
 
@@ -54,90 +58,90 @@ PaperAgentDemo/
 ├── .gitignore
 ├── AGENTS.md
 ├── README.md
-├── i18n/                         # 現在存在; 各言語 README は今後追加される場合があります
+├── i18n/                         # 現在存在; 必要に応じて言語別 README を追加
 └── latex/
     ├── main.tex                  # 主原稿ソース
-    ├── main.acn                  # 生成される用語集/略語アーティファクト
-    ├── main.glo                  # 生成される用語集アーティファクト
+    ├── main.acn                  # 生成された用語集／略語アーティファクト
+    ├── main.glo                  # 生成された用語集アーティファクト
     └── main.ist                  # 用語集スタイルアーティファクト
 ```
 
 ## ✅ 前提条件
 
-`latex/main.tex` で使用しているパッケージを含む TeX 環境をインストールしてください。
+`latex/main.tex` で用いられているパッケージを含む TeX 環境をインストールします。
 
-実用上の最小要件:
+最小限の実用要件:
 
 - `latexmk`
 - `pdflatex`
-- `bibtex`（標準フローでの参考文献処理向け）
-- `glossaries` ワークフローに必要な用語集ツール（通常は TeX ディストリビューションに含まれる `makeglossaries`）
+- `bibtex`（標準的な参照文献フロー向け）
+- `glossaries` ワークフローに必要な用語集ツール（通常は TeX 配布物付属の `makeglossaries`）
 
 前提:
 
-- このリポジトリではパッケージ名・バージョンを固定していません。比較的新しい TeX Live または MiKTeX を使用してください。
+- パッケージ名やバージョンはこのリポジトリでは固定されていないため、最新の TeX Live または MiKTeX 環境を想定します。
 
 ## 📥 インストール
 
-リポジトリをクローンして移動します。
+リポジトリをクローンしてディレクトリへ移動します。
 
 ```bash
 git clone <your-fork-or-repo-url>
 cd PaperAgentDemo
 ```
 
-現在、リポジトリ内に追加のパッケージマネージャー導入手順は定義されていません。
+現時点で追加のパッケージマネージャーインストール手順はリポジトリ内で定義されていません。
 
 ## 🚀 使い方
 
 | タスク | コマンド |
 | --- | --- |
 | 推奨ビルド | `latexmk -pdf -interaction=nonstopmode -halt-on-error latex/main.tex` |
-| 単発クイックコンパイル | `pdflatex latex/main.tex` |
-| 補助ファイル削除 | `latexmk -c latex/main.tex` |
+| 簡易単発ビルド | `pdflatex latex/main.tex` |
+| 補助ファイルの削除 | `latexmk -c latex/main.tex` |
 
-主ビルドコマンド（`AGENTS.md` 推奨）:
+主要なビルドコマンド（`AGENTS.md` 推奨）:
 
 ```bash
 latexmk -pdf -interaction=nonstopmode -halt-on-error latex/main.tex
 ```
 
-単発コンパイル（高速反復向け）:
+編集中の単発コンパイル:
 
 ```bash
 pdflatex latex/main.tex
 ```
 
-PDF を残したまま LaTeX の補助ファイルを削除:
+PDF を保持したまま LaTeX 補助ファイルをクリーン:
 
 ```bash
 latexmk -c latex/main.tex
 ```
 
-想定ワークフロー:
+期待されるワークフロー:
 
-1. `latex/main.tex` の原稿内容を編集する。
+1. `latex/main.tex` で原稿内容を編集する。
 2. PDF をビルドする。
-3. 出力 PDF のレイアウトと参照を目視確認する。
+3. 出力 PDF のレイアウトと参照情報を目視で確認する。
 
 ## ⚙️ 設定
 
-現在の文書レベル設定は `latex/main.tex` にあります。
+現在の文書レベル設定は `latex/main.tex` に記載されています。
 
-- 文書クラス: `article`（`11pt,a4paper`）。
-- ページレイアウト: `geometry`（`margin=1in`）。
-- 行間: `\onehalfspacing`。
-- カスタム `linkblue` と `hyperref` オプションによるリンク色設定。
-- `CNN`, `SNR`, `HSI`, `event camera` の略語・用語集エントリを事前定義。
+- 文書クラス: `article`（`11pt,a4paper`）
+- ページレイアウト: `geometry`（`margin=1in`）
+- 行間: `\onehalfspacing`
+- カスタム `linkblue` と `hyperref` オプションによるリンク色設定
+- `CNN`, `SNR`, `HSI`, `event camera` の用語・略語エントリを事前定義
 
 リポジトリレベルの無視設定（`.gitignore`）:
 
-- 多くの LaTeX ビルド成果物（`*.aux`, `*.log`, `*.pdf` など）を無視。
-- `artifacts/` と `data/` ディレクトリを既定で無視。
+- ほとんどの LaTeX 生成物（`*.aux`, `*.log`, `*.pdf` など）を除外
+- `artifacts/` および `data/` を既定で除外
 
 ## 🧪 例
 
-原稿をエンドツーエンドでビルド:
+原稿を最後までビルドする:
 
 ```bash
 latexmk -pdf -interaction=nonstopmode -halt-on-error latex/main.tex
@@ -150,62 +154,62 @@ latexmk -c latex/main.tex
 latexmk -pdf -interaction=nonstopmode -halt-on-error latex/main.tex
 ```
 
-1セクションを編集中に素早くコンパイル:
+セクションを編集しながら素早くコンパイル:
 
 ```bash
 pdflatex latex/main.tex
 ```
 
-## 🛠 開発メモ
+## 🛠 開発ノート
 
-`AGENTS.md` に基づくガイダンス:
+`AGENTS.md` からのガイダンス:
 
-- LaTeX ソースは明確な `\section{}` 見出し配下に整理する。
-- ラベル接頭辞を一貫させる: 数式は `eq:`, 図は `fig:`, 表は `tab:`, アルゴリズムは `alg:`。
-- 参照は `\cref{}` を優先。
-- アセット名は小文字・ハイフン区切りを使用（例: `figures/snr-comparison.pdf`）。
-- ネストした LaTeX ブロックは必要に応じて 2 スペースでインデントする。
+- LaTeX ソースは明確な `\section{}` 見出しごとに整理する。
+- ラベルのプレフィックスを一貫して使用: 数式は `eq:`、図は `fig:`、表は `tab:`、アルゴリズムは `alg:`。
+- `\cref{}` を優先して参照する。
+- 資産名は小文字・ハイフン区切りを使用（例: `figures/snr-comparison.pdf`）。
+- 必要に応じて、ネストした LaTeX ブロックを 2 スペースでインデント。
 
 検証方針:
 
 - 自動テストスイートはありません。
-- 主な検証は LaTeX ビルド成功と生成 PDF の目視確認です。
+- 主要な検証は LaTeX ビルド成功と生成 PDF の目視確認です。
 
 ## 🧰 トラブルシューティング
 
-よくある問題と確認事項:
+よくある問題と確認項目:
 
-- パッケージ不足でビルド失敗: 使用中の TeX ディストリビューションから不足 LaTeX パッケージを追加してください。
-- 用語集が表示されない: 用語集ツールが導入済みか確認し、`latexmk` を再実行して用語集処理を走らせてください。
-- 引用や参照の警告が残る: `latexmk` で再ビルドしてください（複数パスは自動処理されます）。
-- 出力 PDF が git で追跡されない: `.gitignore` で現在 `*.pdf` が無視されるため、これは想定動作です。
+- パッケージ不足でビルド失敗: 使用している TeX ディストリビューションから不足パッケージをインストール
+- 用語集エントリが表示されない: 用語集ツールがインストール済みか確認し、`latexmk` を再実行して用語集工程を走らせる
+- 引用または参照警告が解消しない: `latexmk` で再ビルド（複数パスが自動的に処理されます）
+- 出力 PDF が git で追跡されない: `.gitignore` が `*.pdf` を除外しているため、想定通りの挙動です。
 
 ## 🗺 ロードマップ
 
-計画中または想定される次のステップ（リポジトリファイルとガイドラインから推定）:
+リポジトリ内のファイルとガイドラインから推測される次のステップ:
 
-1. 作業拡大に合わせて `figures/`, `data/`, `artifacts/`, `code/` ディレクトリを追加する。
-2. 言語ナビゲーションリンクに対応する言語別 README を `i18n/` に追加する。
-3. 再現可能な図表生成のため、任意の補助スクリプトを `code/` 配下に追加する。
-4. プロジェクトがローカルテンプレートを超えて拡大した場合、ビルド検証 CI を導入する。
+1. `figures/`, `data/`, `artifacts/`, `code/` ディレクトリを作業拡大に合わせて追加
+2. 言語ナビゲーションリンクに対応する言語別 README を `i18n/` に追加
+3. 再現性のある図表生成のための補助スクリプトを `code/` 下に追加
+4. ローカルテンプレートを越えて拡張した場合、CI でビルド検証を導入
 
 ## 🤝 コントリビュート
 
-現時点で正式なコントリビューションフローは定義されていないため、以下を基本としてください。
+現時点で正式なコントリビューション手順は未定義のため、以下を基本とします。
 
 1. ブランチを作成する。
-2. 変更を焦点化して実施する。
-3. クリーンな LaTeX ビルドを実行する。
+2. 集中的に変更を加える。
+3. クリーンな LaTeX ビルドを実行:
 
 ```bash
 latexmk -pdf -interaction=nonstopmode -halt-on-error latex/main.tex
 ```
 
-4. PR に原稿またはツール変更の明確な要約を含める。
+4. PR に、原稿またはツール変更内容の明確な要約を含める。
 
-リポジトリガイダンスに基づく推奨コミットスタイル:
+リポジトリガイダンスに基づく推奨コミット方針:
 
-- 命令形で明確なコミット件名を使う。
+- 明確で命令形の件名を使う。
 - 例: `Add glossary entries for sensor terms`
 
 ## 📄 ライセンス
@@ -214,16 +218,23 @@ latexmk -pdf -interaction=nonstopmode -halt-on-error latex/main.tex
 
 前提:
 
-- `LICENSE` ファイルが追加されるまでは、権利および再利用条件は未定義です。
+- `LICENSE` ファイルが追加されるまでは、権利・再利用条件は未設定です。
 
 ## 📚 参考文献と謝辞
 
-`latex/main.tex` のサンプル原稿には現在、以下のインライン参考文献エントリが含まれています。
+`latex/main.tex` のサンプル原稿には、現在インラインの参考文献エントリとして以下が含まれます。
 
 - Goodfellow, Bengio, and Courville, *Deep Learning* (MIT Press, 2016).
 - Gallego et al., *Event-based vision: A survey* (IEEE TPAMI, 2022).
 
-謝辞ステータス:
+謝辞の状況:
 
-- リポジトリファイル上には、専用の謝辞・スポンサー・寄付/サポートセクションは現在ありません。
-- スポンサー/サポート情報が外部に存在する場合は、技術的内容を削除せずここに追加してください。
+- リポジトリ内には、原稿に専用の謝辞セクションはまだありません。
+- スポンサー／サポートリンクは上記 **❤️ Support** セクションに集約されています。
+
+
+## ❤️ Support
+
+| Donate | PayPal | Stripe |
+| --- | --- | --- |
+| [![Donate](https://camo.githubusercontent.com/24a4914f0b42c6f435f9e101621f1e52535b02c225764b2f6cc99416926004b7/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f446f6e6174652d4c617a79696e674172742d3045413545393f7374796c653d666f722d7468652d6261646765266c6f676f3d6b6f2d6669266c6f676f436f6c6f723d7768697465)](https://chat.lazying.art/donate) | [![PayPal](https://camo.githubusercontent.com/d0f57e8b016517a4b06961b24d0ca87d62fdba16e18bbdb6aba28e978dc0ea21/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f50617950616c2d526f6e677a686f754368656e2d3030343537433f7374796c653d666f722d7468652d6261646765266c6f676f3d70617970616c266c6f676f436f6c6f723d7768697465)](https://paypal.me/RongzhouChen) | [![Stripe](https://camo.githubusercontent.com/1152dfe04b6943afe3a8d2953676749603fb9f95e24088c92c97a01a897b4942/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f5374726970652d446f6e6174652d3633354246463f7374796c653d666f722d7468652d6261646765266c6f676f3d737472697065266c6f676f436f6c6f723d7768697465)](https://buy.stripe.com/aFadR8gIaflgfQV6T4fw400) |

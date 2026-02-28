@@ -1,6 +1,8 @@
 [English](../README.md) · [العربية](README.ar.md) · [Español](README.es.md) · [Français](README.fr.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Tiếng Việt](README.vi.md) · [中文 (简体)](README.zh-Hans.md) · [中文（繁體）](README.zh-Hant.md) · [Deutsch](README.de.md) · [Русский](README.ru.md)
 
 
+[![LazyingArt banner](https://github.com/lachlanchen/lachlanchen/raw/main/figs/banner.png)](https://github.com/lachlanchen/lachlanchen/blob/main/figs/banner.png)
+
 # PaperAgentDemo
 
 ![Status](https://img.shields.io/badge/status-active-1f6feb)
@@ -10,6 +12,8 @@
 ![License](https://img.shields.io/badge/license-Not%20Specified-lightgrey)
 
 `latex/main.tex`를 중심으로 구성된, 저장소 실제 상태와 일치하는 간결한 LaTeX 논문 스캐폴드입니다. 수식, 알고리즘, 표, 용어집/약어, 참고문헌, PDF 빌드 도구를 포함한 원고 워크플로를 검증하고 확장하도록 설계되었습니다.
+
+## 🧩 한눈에 보기
 
 | 항목 | 값 |
 | --- | --- |
@@ -27,7 +31,7 @@
 - 일반적인 연구 논문 작성 작업을 위한 LaTeX 패키지 구성(수학, 인용, 용어집, 교차 참조).
 - 다국어 README 생성을 위한 `.auto-readme-work/` 하위 파이프라인 메타데이터.
 
-중요한 저장소 참고 사항:
+저장소 중요 안내:
 
 - `AGENTS.md`에는 의도된 디렉터리(`figures/`, `data/`, `artifacts/`, `code/`)가 설명되어 있으나, 현재 트리에는 일부가 아직 없습니다. 이 README는 해당 의도를 유지하며 누락된 요소를 명시적으로 표시합니다.
 
@@ -62,7 +66,7 @@ PaperAgentDemo/
     └── main.ist                  # 용어집 스타일 산출물
 ```
 
-## ✅ 사전 요구 사항
+## ✅ 선행 조건
 
 `latex/main.tex`에서 사용하는 패키지를 포함한 TeX 환경을 설치하세요.
 
@@ -108,7 +112,7 @@ latexmk -pdf -interaction=nonstopmode -halt-on-error latex/main.tex
 pdflatex latex/main.tex
 ```
 
-PDF는 유지한 채 LaTeX 보조 파일 정리:
+PDF를 유지한 채 LaTeX 보조 파일 정리:
 
 ```bash
 latexmk -c latex/main.tex
@@ -182,7 +186,7 @@ pdflatex latex/main.tex
 
 ## 🗺 로드맵
 
-예정되었거나 가능성이 높은 다음 단계(저장소 파일 및 가이드 기준 추론):
+예상되거나 예정된 다음 단계(저장소 파일 및 가이드 기준 추론):
 
 1. 작업 확장에 맞춰 `figures/`, `data/`, `artifacts/`, `code/` 디렉터리를 추가.
 2. 언어 네비게이션 링크와 일치하는 언어별 README 파일을 `i18n/` 아래에 추가.
@@ -225,5 +229,12 @@ latexmk -pdf -interaction=nonstopmode -halt-on-error latex/main.tex
 
 감사의 글 상태:
 
-- 저장소 파일에는 전용 감사의 글, 스폰서, 또는 후원/지원 섹션이 현재 없습니다.
-- 스폰서/지원 정보가 외부에 존재한다면 기술 콘텐츠를 제거하지 말고 여기에 추가하세요.
+- 저장소 파일에는 현재 전용 감사의 글 섹션이 없습니다.
+- 후원/지원 링크는 위의 **❤️ Support** 섹션에 통합되어 있습니다.
+
+
+## ❤️ Support
+
+| Donate | PayPal | Stripe |
+| --- | --- | --- |
+| [![Donate](https://camo.githubusercontent.com/24a4914f0b42c6f435f9e101621f1e52535b02c225764b2f6cc99416926004b7/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f446f6e6174652d4c617a79696e674172742d3045413545393f7374796c653d666f722d7468652d6261646765266c6f676f3d6b6f2d6669266c6f676f436f6c6f723d7768697465)](https://chat.lazying.art/donate) | [![PayPal](https://camo.githubusercontent.com/d0f57e8b016517a4b06961b24d0ca87d62fdba16e18bbdb6aba28e978dc0ea21/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f50617950616c2d526f6e677a686f754368656e2d3030343537433f7374796c653d666f722d7468652d6261646765266c6f676f3d70617970616c266c6f676f436f6c6f723d7768697465)](https://paypal.me/RongzhouChen) | [![Stripe](https://camo.githubusercontent.com/1152dfe04b6943afe3a8d2953676749603fb9f95e24088c92c97a01a897b4942/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f5374726970652d446f6e6174652d3633354246463f7374796c653d666f722d7468652d6261646765266c6f676f3d737472697065266c6f676f436f6c6f723d7768697465)](https://buy.stripe.com/aFadR8gIaflgfQV6T4fw400) |

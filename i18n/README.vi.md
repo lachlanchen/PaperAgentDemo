@@ -1,6 +1,8 @@
 [English](../README.md) · [العربية](README.ar.md) · [Español](README.es.md) · [Français](README.fr.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Tiếng Việt](README.vi.md) · [中文 (简体)](README.zh-Hans.md) · [中文（繁體）](README.zh-Hant.md) · [Deutsch](README.de.md) · [Русский](README.ru.md)
 
 
+[![LazyingArt banner](https://github.com/lachlanchen/lachlanchen/raw/main/figs/banner.png)](https://github.com/lachlanchen/lachlanchen/blob/main/figs/banner.png)
+
 # PaperAgentDemo
 
 ![Status](https://img.shields.io/badge/status-active-1f6feb)
@@ -9,37 +11,39 @@
 ![Glossary](https://img.shields.io/badge/glossaries-enabled-6f42c1)
 ![License](https://img.shields.io/badge/license-Not%20Specified-lightgrey)
 
-Một bộ khung bài báo LaTeX gọn nhẹ, bám sát trạng thái thực tế của kho mã, tập trung vào `latex/main.tex`, được thiết kế để kiểm chứng và mở rộng quy trình viết bản thảo với phương trình, thuật toán, bảng biểu, thuật ngữ/từ viết tắt, tài liệu tham khảo và công cụ build PDF.
+Một bộ khung bài báo LaTeX gọn nhẹ, phản ánh đúng kho mã và tập trung vào `latex/main.tex`, được thiết kế để kiểm chứng và mở rộng quy trình soạn thảo bản thảo bằng phương trình, thuật toán, bảng biểu, glossary/thuật ngữ viết tắt, tài liệu tham khảo và công cụ biên dịch PDF.
+
+## 🧩 Tóm tắt nhanh
 
 | Mục | Giá trị |
 | --- | --- |
 | Tệp bản thảo chính | `latex/main.tex` |
 | Kiểu build hiện tại | LaTeX cục bộ (`latexmk` / `pdflatex`) |
-| Trạng thái thư mục i18n | `i18n/` đã tồn tại (các tệp ngôn ngữ có thể được bổ sung theo thời gian) |
-| Trạng thái tệp giấy phép | Hiện chưa có |
+| Tình trạng thư mục i18n | `i18n/` đã tồn tại (tệp ngôn ngữ có thể được bổ sung theo thời gian) |
+| Tình trạng tệp giấy phép | Hiện chưa có |
 
 ## 📌 Tổng quan
 
-Kho mã này hiện cung cấp:
+Kho lưu trữ này hiện cung cấp:
 
 - Một tệp nguồn bản thảo chính duy nhất: `latex/main.tex`.
-- Cấu trúc bài báo mẫu gồm abstract, methods, algorithm, results, discussion và conclusion.
-- Bộ gói LaTeX bao phủ các nhu cầu viết nghiên cứu phổ biến (toán học, trích dẫn, glossary, cross-reference).
-- Siêu dữ liệu pipeline trong `.auto-readme-work/` để tạo README đa ngôn ngữ.
+- Cấu trúc bài báo mẫu với abstract, methods, algorithm, results, discussion và conclusion.
+- Bộ gói LaTeX cho các tác vụ viết bài nghiên cứu thông dụng (toán học, trích dẫn, glossary, cross-references).
+- Siêu dữ liệu pipeline trong `.auto-readme-work/` cho việc sinh README đa ngôn ngữ.
 
-Lưu ý quan trọng về kho mã:
+Lưu ý quan trọng của kho:
 
-- `AGENTS.md` mô tả các thư mục dự kiến (`figures/`, `data/`, `artifacts/`, `code/`), nhưng một số thư mục trong đó hiện chưa có trong cây thư mục hiện tại. README này giữ nguyên định hướng đó và ghi rõ các phần còn thiếu.
+- `AGENTS.md` mô tả các thư mục dự kiến (`figures/`, `data/`, `artifacts/`, `code/`), nhưng một số trong số đó chưa tồn tại trong cây hiện tại. README này giữ nguyên mục tiêu đó và ghi rõ các phần còn thiếu.
 
 ## ✨ Tính năng
 
-- Soạn thảo công thức toán qua `amsmath`, `amssymb`, `bm`, `mathtools` và `siunitx`.
-- Hỗ trợ hình và bảng qua `graphicx`, `subcaption`, `booktabs` và `multirow`.
+- Soạn thảo toán bằng `amsmath`, `amssymb`, `bm`, `mathtools`, và `siunitx`.
+- Hỗ trợ hình ảnh và bảng qua `graphicx`, `subcaption`, `booktabs`, và `multirow`.
 - Môi trường thuật toán qua `algorithm` và `algpseudocode`.
 - Hỗ trợ trích dẫn qua `natbib`.
-- Hỗ trợ glossary và acronym qua `glossaries` (`\makeglossaries` đã bật).
-- Cross-reference qua `hyperref` và `cleveref`.
-- Nội dung ví dụ đã có sẵn: phương trình hàm mục tiêu với regularization `\ell_1`, phương trình SNR theo dB, giả mã gradient descent, bảng so sánh định lượng và các mục tài liệu tham khảo nội tuyến.
+- Hỗ trợ glossary và thuật ngữ viết tắt qua `glossaries` (`\makeglossaries` đã được bật).
+- Cross-referencing qua `hyperref` và `cleveref`.
+- Nội dung ví dụ đã có sẵn: phương trình hàm mục tiêu với quy chuẩn hóa `\ell_1`, phương trình SNR theo dB, giả mã gradient descent, bảng so sánh định lượng, và mục tài liệu tham khảo nội tuyến.
 
 ## 🧭 Cấu trúc dự án
 
@@ -64,37 +68,37 @@ PaperAgentDemo/
 
 ## ✅ Điều kiện tiên quyết
 
-Cài đặt một môi trường TeX bao gồm các gói được dùng bởi `latex/main.tex`.
+Cài đặt một môi trường TeX bao gồm các gói được sử dụng trong `latex/main.tex`.
 
-Yêu cầu tối thiểu thực tế:
+Yêu cầu thực tế tối thiểu:
 
 - `latexmk`
 - `pdflatex`
-- `bibtex` (cho xử lý tài liệu tham khảo trong luồng chuẩn)
-- Công cụ glossary cần cho luồng `glossaries` (thường là `makeglossaries` từ bộ TeX)
+- `bibtex` (cho xử lý thư mục tham khảo trong luồng chuẩn)
+- Công cụ glossary cần thiết cho quy trình `glossaries` (thường là `makeglossaries` từ bản phân phối TeX)
 
 Giả định:
 
-- Tên gói và phiên bản không được ghim trong kho mã này; hãy dùng bản phân phối TeX Live hoặc MiKTeX tương đối mới.
+- Tên gói và phiên bản không được khóa cứng trong kho; nên dùng bản phân phối TeX Live hoặc MiKTeX tương đối mới.
 
 ## 📥 Cài đặt
 
-Clone kho mã và đi vào thư mục:
+Clone và vào thư mục dự án:
 
 ```bash
 git clone <your-fork-or-repo-url>
 cd PaperAgentDemo
 ```
 
-Hiện chưa có bước cài đặt qua package manager nào được định nghĩa trong kho mã.
+Hiện chưa có bước cài đặt bổ sung qua package manager nào được định nghĩa trong repo.
 
-## 🚀 Cách dùng
+## 🚀 Cách sử dụng
 
-| Tác vụ | Lệnh |
+| Nhiệm vụ | Lệnh |
 | --- | --- |
-| Build khuyến nghị | `latexmk -pdf -interaction=nonstopmode -halt-on-error latex/main.tex` |
+| Build đề xuất | `latexmk -pdf -interaction=nonstopmode -halt-on-error latex/main.tex` |
 | Biên dịch nhanh một lượt | `pdflatex latex/main.tex` |
-| Dọn tệp phụ trợ | `latexmk -c latex/main.tex` |
+| Dọn file phụ | `latexmk -c latex/main.tex` |
 
 Lệnh build chính (khuyến nghị, theo `AGENTS.md`):
 
@@ -108,36 +112,36 @@ Biên dịch một lượt (lặp nhanh):
 pdflatex latex/main.tex
 ```
 
-Dọn các tệp phụ trợ LaTeX nhưng giữ PDF:
+Dọn file phụ LaTeX nhưng giữ lại PDF:
 
 ```bash
 latexmk -c latex/main.tex
 ```
 
-Quy trình dự kiến:
+Quy trình mong đợi:
 
-1. Chỉnh sửa nội dung bản thảo trong `latex/main.tex`.
+1. Chỉnh sửa nội dung trong `latex/main.tex`.
 2. Build PDF.
-3. Kiểm tra trực quan bố cục và tham chiếu trong PDF đầu ra.
+3. Kiểm tra trực quan bố cục và tài liệu tham khảo trong PDF đầu ra.
 
 ## ⚙️ Cấu hình
 
-Cấu hình hiện tại ở cấp tài liệu nằm trong `latex/main.tex`:
+Cấu hình cấp tài liệu hiện tại nằm trong `latex/main.tex`:
 
-- Lớp tài liệu: `article` với `11pt,a4paper`.
+- Document class: `article` với `11pt,a4paper`.
 - Bố cục trang: `geometry` với `margin=1in`.
-- Giãn dòng: `\onehalfspacing`.
+- Khoảng cách dòng: `\onehalfspacing`.
 - Thiết lập màu liên kết qua `linkblue` tùy chỉnh và các tùy chọn `hyperref`.
-- Acronym và glossary entry được khai báo sẵn cho `CNN`, `SNR`, `HSI` và `event camera`.
+- Các mục glossary và acronym được định nghĩa trước cho `CNN`, `SNR`, `HSI`, và `event camera`.
 
-Hành vi ignore ở cấp kho mã (`.gitignore`):
+Hành vi bỏ qua ở cấp repository (`.gitignore`):
 
-- Bỏ qua phần lớn artifact build LaTeX (`*.aux`, `*.log`, `*.pdf`, v.v.).
+- Bỏ qua hầu hết artifact build của LaTeX (`*.aux`, `*.log`, `*.pdf`, v.v.).
 - Bỏ qua mặc định các thư mục `artifacts/` và `data/`.
 
 ## 🧪 Ví dụ
 
-Build bản thảo end-to-end:
+Build bản thảo từ đầu đến cuối:
 
 ```bash
 latexmk -pdf -interaction=nonstopmode -halt-on-error latex/main.tex
@@ -150,7 +154,7 @@ latexmk -c latex/main.tex
 latexmk -pdf -interaction=nonstopmode -halt-on-error latex/main.tex
 ```
 
-Biên dịch nhanh khi đang chỉnh một phần:
+Biên dịch nhanh khi đang chỉnh sửa một phần:
 
 ```bash
 pdflatex latex/main.tex
@@ -160,70 +164,77 @@ pdflatex latex/main.tex
 
 Hướng dẫn từ `AGENTS.md`:
 
-- Giữ mã nguồn LaTeX dưới các tiêu đề `\section{}` rõ ràng.
-- Dùng tiền tố nhãn nhất quán: `eq:` cho phương trình, `fig:` cho hình, `tab:` cho bảng và `alg:` cho thuật toán.
-- Ưu tiên tham chiếu qua `\cref{}`.
-- Dùng tên tài nguyên viết thường, nối bằng dấu gạch ngang (ví dụ: `figures/snr-comparison.pdf`).
-- Thụt lề các khối LaTeX lồng nhau bằng hai dấu cách khi hữu ích.
+- Giữ mã nguồn LaTeX theo các mục `\section{}` rõ ràng.
+- Dùng tiền tố nhãn nhất quán: `eq:` cho phương trình, `fig:` cho hình, `tab:` cho bảng, và `alg:` cho thuật toán.
+- Ưu tiên trỏ tham chiếu bằng `\cref{}`.
+- Dùng tên tài nguyên viết thường, nối bởi dấu gạch ngang (ví dụ: `figures/snr-comparison.pdf`).
+- Thụt đầu dòng các khối LaTeX lồng nhau bằng hai khoảng trắng khi cần thiết.
 
-Cách tiếp cận xác thực:
+Cách xác thực:
 
-- Không có bộ kiểm thử tự động.
-- Xác thực chính là build LaTeX thành công cộng với kiểm tra trực quan PDF được tạo.
+- Không có test tự động.
+- Xác thực chính là build LaTeX thành công rồi kiểm tra trực quan PDF đã tạo.
 
-## 🧰 Khắc phục sự cố
+## 🧰 Xử lý sự cố
 
-Các lỗi thường gặp và cách kiểm tra:
+Một số lỗi phổ biến và kiểm tra:
 
-- Build lỗi thiếu package: cài các gói LaTeX còn thiếu từ bản phân phối TeX của bạn.
-- Mục glossary không xuất hiện: đảm bảo công cụ glossary đã được cài và chạy lại `latexmk` để các bước glossary được thực thi.
-- Cảnh báo citation hoặc reference vẫn còn: build lại bằng `latexmk` (nhiều lượt chạy sẽ được xử lý tự động).
-- PDF đầu ra không được git theo dõi: đây là hành vi dự kiến vì `*.pdf` hiện bị ignore trong `.gitignore`.
+- Build thất bại do thiếu gói: cài thêm các gói LaTeX còn thiếu từ bản phân phối TeX của bạn.
+- Mục glossary không xuất hiện: kiểm tra đã cài đủ công cụ glossary và chạy lại `latexmk` để các bước glossary chạy.
+- Cảnh báo trích dẫn hoặc tham chiếu vẫn còn: build lại bằng `latexmk` (các lượt chạy lặp lại sẽ được xử lý tự động).
+- PDF đầu ra không được git theo dõi: đây là hành vi mong đợi vì `*.pdf` hiện đang bị ignore trong `.gitignore`.
 
 ## 🗺 Lộ trình
 
-Các bước kế tiếp đã lên kế hoạch hoặc nhiều khả năng sẽ làm (suy ra từ tệp kho mã và hướng dẫn):
+Các bước kế tiếp dự kiến hoặc rất có thể (suy diễn từ tệp repository và hướng dẫn):
 
-1. Thêm các thư mục `figures/`, `data/`, `artifacts/` và `code/` khi phạm vi công việc mở rộng.
-2. Thêm các tệp README theo từng ngôn ngữ trong `i18n/` khớp với các liên kết điều hướng ngôn ngữ.
-3. Thêm script hỗ trợ tùy chọn để tái lập việc tạo hình/bảng trong `code/`.
-4. Thiết lập CI để xác minh build nếu dự án phát triển vượt khỏi mức template cục bộ.
+1. Thêm `figures/`, `data/`, `artifacts/`, và `code/` khi phạm vi công việc mở rộng.
+2. Thêm tệp README theo ngôn ngữ trong `i18n/` theo đúng liên kết chuyển ngôn ngữ.
+3. Thêm script hỗ trợ tùy chọn để tạo hình/bảng tái lập trong `code/`.
+4. Triển khai CI để xác minh build nếu dự án mở rộng vượt khỏi khuôn mẫu local.
 
 ## 🤝 Đóng góp
 
-Hiện chưa có quy trình đóng góp chính thức, nên dùng baseline sau:
+Hiện chưa có quy trình đóng góp chính thức, vì vậy dùng baseline sau:
 
-1. Tạo một nhánh.
+1. Tạo một nhánh mới.
 2. Thực hiện thay đổi tập trung.
-3. Chạy build LaTeX sạch:
+3. Chạy một lần build LaTeX sạch:
 
 ```bash
 latexmk -pdf -interaction=nonstopmode -halt-on-error latex/main.tex
 ```
 
-4. Đính kèm phần tóm tắt rõ ràng về thay đổi bản thảo hoặc công cụ trong PR.
+4. Kèm theo phần tóm tắt rõ ràng về thay đổi bản thảo hoặc tooling trong PR.
 
-Kiểu commit gợi ý theo hướng dẫn kho mã:
+Phong cách commit gợi ý theo hướng dẫn repository:
 
-- Dùng tiêu đề commit rõ ràng, ở thể mệnh lệnh.
+- Dùng tiêu đề commit rõ ràng theo mệnh lệnh.
 - Ví dụ: `Add glossary entries for sensor terms`
 
 ## 📄 Giấy phép
 
-Hiện chưa có tệp giấy phép trong thư mục gốc của kho mã.
+Không có tệp license trong thư mục gốc của repository.
 
 Giả định:
 
-- Mọi quyền và điều khoản tái sử dụng hiện chưa được chỉ định cho đến khi thêm tệp `LICENSE`.
+- Tất cả quyền và điều khoản tái sử dụng hiện chưa được xác định cho đến khi có tệp `LICENSE`.
 
-## 📚 Tài liệu tham khảo và Ghi nhận
+## 📚 Tài liệu tham khảo và lời cảm ơn
 
-Bản thảo mẫu trong `latex/main.tex` hiện bao gồm các mục tài liệu tham khảo nội tuyến cho:
+Bản thảo mẫu trong `latex/main.tex` hiện đang bao gồm các mục tài liệu tham khảo nội tuyến cho:
 
 - Goodfellow, Bengio, và Courville, *Deep Learning* (MIT Press, 2016).
-- Gallego và cộng sự, *Event-based vision: A survey* (IEEE TPAMI, 2022).
+- Gallego et al., *Event-based vision: A survey* (IEEE TPAMI, 2022).
 
-Trạng thái ghi nhận:
+Tình trạng ghi nhận:
 
-- Hiện không có phần acknowledgements, sponsor, hoặc donation/support riêng trong các tệp của kho mã.
-- Nếu thông tin sponsor/support tồn tại ở nguồn bên ngoài, hãy bổ sung tại đây mà không xóa nội dung kỹ thuật.
+- Hiện chưa có mục acknowledgements riêng trong bản thảo.
+- Các liên kết tài trợ/hỗ trợ được tập trung trong mục **❤️ Support** ở trên.
+
+
+## ❤️ Support
+
+| Donate | PayPal | Stripe |
+| --- | --- | --- |
+| [![Donate](https://camo.githubusercontent.com/24a4914f0b42c6f435f9e101621f1e52535b02c225764b2f6cc99416926004b7/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f446f6e6174652d4c617a79696e674172742d3045413545393f7374796c653d666f722d7468652d6261646765266c6f676f3d6b6f2d6669266c6f676f436f6c6f723d7768697465)](https://chat.lazying.art/donate) | [![PayPal](https://camo.githubusercontent.com/d0f57e8b016517a4b06961b24d0ca87d62fdba16e18bbdb6aba28e978dc0ea21/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f50617950616c2d526f6e677a686f754368656e2d3030343537433f7374796c653d666f722d7468652d6261646765266c6f676f3d70617970616c266c6f676f436f6c6f723d7768697465)](https://paypal.me/RongzhouChen) | [![Stripe](https://camo.githubusercontent.com/1152dfe04b6943afe3a8d2953676749603fb9f95e24088c92c97a01a897b4942/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f5374726970652d446f6e6174652d3633354246463f7374796c653d666f722d7468652d6261646765266c6f676f3d737472697065266c6f676f436f6c6f723d7768697465)](https://buy.stripe.com/aFadR8gIaflgfQV6T4fw400) |
